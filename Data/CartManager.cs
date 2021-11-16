@@ -47,7 +47,7 @@ namespace SinusSkateboards.Data
         //        ShoppingCart.Remove(item);
         //    }
         //}
-        public static void TotalCost(int id)
+        public static double TotalCost(int id)
         {
             Products = ProductManager.GetProducts();
             Products = Products.Where(item => item.ID == id).ToList();
@@ -56,6 +56,8 @@ namespace SinusSkateboards.Data
             {
                 TotalAmount += item.Price;
             }
+            TotalAmount = CartManager.TotalAmount;
+            return TotalAmount;
         }
         public static void SubtractCost(int id)
         {

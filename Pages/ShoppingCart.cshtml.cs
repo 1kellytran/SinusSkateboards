@@ -17,8 +17,7 @@ namespace SinusSkateboards.Pages
         public void OnGet(int id)
         {
             ShoppingCart = CartManager.AddToCart(id);
-            CartManager.TotalCost(id);
-            TotalAmount = CartManager.TotalAmount;
+            TotalAmount = CartManager.TotalCost(id);
         }
         public void OnPost(int id, string action)
         {
