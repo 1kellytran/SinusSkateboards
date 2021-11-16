@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SinusSkateboards.Models
 {
-    public class SkateboardModel
+    public class SkateboardModel : ProductModel
     {
         public Material Material { get; set; }
     }

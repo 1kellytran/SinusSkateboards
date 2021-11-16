@@ -1,4 +1,21 @@
 ﻿@page
 @model SinusSkateboards.Pages.WheelsModel
 @{
-}
+}<div class="row">
+    @foreach (var product in Model.Wheels)
+    {
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src=~/images/products/@product.Image alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">@product.Name</h6>
+                    <p class="card-text">@product.Price SEK/piece</p>
+                    <p class="card-text"><b>Wheel size</b>: @(((Models.WheelModel)product).WheelSize)</p>
+                    <a asp-page="ViewProduct" asp-route-ID="@product.ID" class="btn btn-primary">View Product</a>
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+</div>
+

@@ -2,3 +2,21 @@
 @model SinusSkateboards.Pages.SkateboardsModel
 @{
 }
+<div class="row">
+    @foreach (var product in Model.Skateboards)
+    {
+        <div class="col-lg-3">
+            <div class="card" style="width: 10rem;">
+                <img class="card-img-top" src=~/images/products/@product.Image alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">@product.Name</h6>
+                    <p class="card-text"><b>Material</b>: @(((Models.SkateboardModel)product).Material)</p>
+                    <p class="card-text"><b>Size</b>: ONE SIZE</p>
+                    <p class="card-text">@product.Price SEK </p>
+                    <a asp-page="ViewProduct" asp-route-ID="@product.ID" class="btn btn-primary">View Product</a>
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+</div>

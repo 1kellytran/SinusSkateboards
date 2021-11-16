@@ -1,0 +1,32 @@
+﻿@page
+@model SinusSkateboards.Pages.SearchModel
+@{
+}
+<div class="row">
+    @foreach (var item in Model.Products)
+    {
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src=~/images/products/@item.Image alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">@item.Name</h6>
+                    <p class="card-text">@item.Info</p>
+                    <p class="card-text">@item.Price SEK </p>
+                    @if (item.Stock > 0)
+                    {
+                        <p class="card-text"><i>@item.Stock</i> in Stock</p>
+                    }
+                    else
+                    {
+                        <p><i><b>Out of Stock</b></i></p>
+                    }
+                    @if (item.MaxStock > 0)
+                    {
+                        <a asp-page="ShoppingCart" asp-route-id="@item.ID" class="btn btn-primary">Add to cart</a>
+                    }
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+</div>

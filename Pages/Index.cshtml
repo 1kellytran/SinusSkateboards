@@ -1,14 +1,42 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
+@{}
+
+<form method="post">
+    <input type="text" asp-for="@Model.Search" />
+    <input type="submit" value="Search!" />
+</form>
+<div class="text-center"><img src="~/images/logo/@Model.StartImage" /></div>
+
 <div class="jumbotron">
-    <h1 class="display-4">Sinus</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <h1 class="display-4"> <b> 2 Sk8 is Gr8! </b></h1>
+    <p class="lead">Get your skate on! </p>
+    <hr class="my-2">
+    <h2>Check out our new custom Greta Thunberg deck! </h2>
     <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <br />
+        <a asp-page="ViewProduct" asp-route-ID="302" class="btn btn-primary">Go to Greta's Fury!</a>
     </p>
 </div>
+
+<div class="text-center"><h1 class="display-4">Bestsellers!</h1></div>
+<br />
+
+<div class="row">
+    @foreach (var product in Model.Bestsellers)
+    {
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src=~/images/products/@product.Image alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Info</p>
+                    <a asp-page="ViewProduct" asp-route-ID="@product.ID" class="btn btn-primary">View Product</a>
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+</div>
+
+

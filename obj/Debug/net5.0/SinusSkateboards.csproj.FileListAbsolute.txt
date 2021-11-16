@@ -719,3 +719,11 @@ C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusS
 C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\SinusSkateboards.Views.pdb
 C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\SinusSkateboards.csproj.CopyComplete
 C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\SinusSkateboards.genruntimeconfig.cache
+C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\Razor\Pages\ViewProduct.cshtml.g.cs
+C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\Razor\Pages\Shipping.cshtml.g.cs
+C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\Razor\Pages\Confirmation.cshtml.g.cs
+C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\Razor\Pages\ThankYou.cshtml.g.cs
+C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\Razor\Pages\Search.cshtml.g.cs
+C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\Razor\Pages\EditProduct.cshtml.g.cs
+C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\Razor\Pages\CreateProduct.cshtml.g.cs
+C:\Users\kelly\OneDrive\Skrivbord\Newton\Objektorienterad Programmering 1\SinusSkateboards\SinusSkateboards\SinusSkateboards\obj\Debug\net5.0\Razor\Pages\DeleteProduct.cshtml.g.cs

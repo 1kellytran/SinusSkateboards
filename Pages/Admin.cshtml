@@ -2,3 +2,33 @@
 @model SinusSkateboards.Pages.AdminModel
 @{
 }
+
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Info</th>
+            <th>Bestseller</th>
+            <th>Price</th>
+            <th>ImageURL</th>
+            <th>In Stock</th>
+        </tr>
+        <a asp-page="CreateProduct" class="btn btn-outline-dark">Create</a>
+    </thead>
+    @foreach (var product in Model.Products)
+    {
+        <tr>
+            <td>@product.ID</td>
+            <td>@product.Name</td>
+            <td>@product.Info</td>
+            <td>@product.IsBestseller</td>
+            <td>@product.Price</td>
+            <td>@product.Image</td>
+            <td>@product.Stock</td>
+            <td> <a asp-page="EditProduct" asp-route-id="@product.ID" class="btn btn-outline-dark">Edit</a></td>
+            <td><a asp-page="DeleteProduct" asp-route-id="@product.ID" class="btn btn-outline-danger">Delete</a></td>
+        </tr>
+    }
+</table>

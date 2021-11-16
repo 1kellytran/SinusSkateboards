@@ -1,0 +1,42 @@
+﻿@page
+@model SinusSkateboards.Pages.EditModel
+@{
+}
+
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src=~/images/products/@product.Image alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">Name: @product.Name</h6>
+                    <p class="card-text"> Info: @product.Info</p>
+                    <p class="card-text">Price: @product.Price SEK </p>
+                    <p class="card-text">In stock: @product.Stock </p>
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+        <div class="col-lg-4">
+            <form method="post">
+                <p>Edit Name:</p>
+                <input type="text" asp-for="@Model.Name" />
+                <br />
+                <p>Edit Price:</p>
+                <input type="number" asp-for="@Model.Price" />
+                <br />
+                <p>Edit In stock:</p>
+                <input type="number" asp-for="@Model.Stock" />
+                <br />
+                <p>Edit information:</p>
+                <input type="text" asp-for="@Model.Info" />
+                <br />
+                <br />
+                <input type="submit" value="Confirm Changes" />
+            </form>
+            <br />
+            <p>@Model.Message</p>
+        </div>
+</div>

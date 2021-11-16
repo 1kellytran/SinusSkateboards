@@ -8,11 +8,10 @@ namespace SinusSkateboards.Models
 {
     public enum Category
     {
-        Cap,
+        Cap = 1,
         Hoodie,
-        Skateboard,
         Tshirt,
-        Wheel
+
     }
 
     public enum Color
@@ -31,8 +30,8 @@ namespace SinusSkateboards.Models
 
     public enum Size
     {
-        [Display(Name = "One size")]
-        One_size,
+        [Display(Name = "ONE SIZE")]
+        ONE_SIZE,
         S,
         M, 
         L
@@ -42,5 +41,10 @@ namespace SinusSkateboards.Models
     {
         Plastic,
         Wood
+    }
+    public enum WheelSize
+    {
+        Fat,
+        Slim
     }
 }

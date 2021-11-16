@@ -12,9 +12,20 @@ namespace SinusSkateboards.Pages
 {
     public class IndexModel : PageModel
     {
+        public string StartImage = "sinus-logo-symbol - large.png";
+        public List<ProductModel> Bestsellers { get; set; }
+        [BindProperty]
+        public string Search { get; set; }
         public void OnGet()
         {
-
+            Bestsellers = ProductManager.GetProducts();
+            // Sorting out bestsellers
+            Bestsellers = Bestsellers.Where(item => item.IsBestseller == true).ToList();
+        }
+        // Initializing search if used
+        public IActionResult OnPost()
+        {
+            return RedirectToPage("/Search", new { Search });
         }
     }
 }

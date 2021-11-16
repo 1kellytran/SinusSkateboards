@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace SinusSkateboards.Models
 {
-    public class ShoppingCartModel
+    public class WearableModel : ProductModel
     {
-        public int ID { get; set; }
-        public int Quantity { get; set; }
+        public Size Size { get; set; }
     }
 }

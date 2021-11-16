@@ -1,0 +1,63 @@
+﻿@page
+@model SinusSkateboards.Pages.ViewPageModel
+@{
+}
+
+<div class="row">
+    @foreach (var item in Model.Product)
+    {
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src=~/images/products/@item.Image alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Info</p>
+                    @if (item.Category > 0)
+                    {
+                        <p class="card-text">Size: <b>@(((Models.WearableModel)item).Size)</b></p>
+                    }
+                    <p class="card-text">@item.Price SEK </p>
+                    @if (item.Stock > 0)
+                    {
+                        <p class="card-text"><i>@item.Stock</i> in Stock</p>
+                    }
+                    else
+                    {
+                        <p><i><b>Out of Stock</b></i></p>
+                    }
+                    @if (item.MaxStock > 0)
+                    {
+                        <a asp-page="ShoppingCart" asp-route-id="@item.ID" class="btn btn-primary">Add to cart</a>
+                    }
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+</div>
+
+@*<div row="col-lg-6">
+    @foreach (var item in Model.Product)
+    {
+    <div class="d-flex flex-row">
+        <img src=~/images/products/@item.Image />
+        <div class="text-right">
+            <h2>@item.Name</h2>
+            <p>@item.Info</p>
+            <h4>@item.Price SEK</h4><br /><br />
+            @if (item.Stock > 0)
+            {
+                <p class="card-text"><i>@item.Stock</i> in Stock</p>
+            }
+            else
+            {
+                <p><i><b>Out of Stock</b></i></p>
+            }
+            @if (item.MaxStock > 0)
+            {
+                <a asp-page="ShoppingCart" asp-route-id="@item.ID" class="btn btn-primary">Add to cart</a>
+            }
+        </div>
+    </div>        
+    }
+</div>*@

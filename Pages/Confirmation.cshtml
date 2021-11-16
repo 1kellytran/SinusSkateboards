@@ -1,0 +1,45 @@
+﻿@page
+@model SinusSkateboards.Pages.ConfirmationModel
+@{ 
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h4>Order will be sent to:</h4>
+        <br />@Model.Name <br />@Model.Adress <br />@Model.PostalCode, @Model.City<br />@Model.Number<br /> @Model.Email
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Your order: </h5>
+        @foreach (var item in Model.ShoppingCart)
+        {
+            <p>
+                <u>
+                    @item.CartQuantity x @item.Name,
+                    @if (item.Category > 0)
+                    {
+                        @(((Models.WearableModel)item).Size)
+                    }
+                    , @item.Price SEK
+                </u>
+            </p>
+        }
+        <p>
+            @if (Model.ShippingOption == "PostNord")
+            {
+                <i>Shipping: 39 SEK</i>
+            }
+            else
+            {
+                <i>Shipping: 99 SEK</i>
+            }
+            <br /><i>Payment made with: @Model.PaymentOption</i>
+        </p>
+
+        <p>Your total including shipping: <b>@Model.TotalAmount SEK</b><br />
+        Your order will be delivered by: <b>@Model.ShippingOption</b><br />
+        An order confirmation will be sent to <b>@Model.Number</b> and <b>@Model.Email</b>
+        </p>
+            <a asp-page="ThankYou" class="btn btn-outline-info">Confirm Order</a>
+        </div>
+</div>

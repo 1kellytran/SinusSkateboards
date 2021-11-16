@@ -1,0 +1,38 @@
+﻿@page
+@model SinusSkateboards.Pages.ShippingModel
+@{
+}
+<h1 class="text-center">Information and Shipping</h1>
+
+<h3>Enter your information below: </h3>
+<form method="post">
+    <label>Name:</label><br />
+    <input type="text" asp-for="@Model.Name" /><br />
+
+    <label>E-mail:</label><br />
+    <input type="text" asp-for="@Model.Email" /><br />
+
+    <label>Phone:</label><br />
+    <input type="number" asp-for="@Model.Number" /><br />
+
+    <label>Adress:</label><br />
+    <input type="text" asp-for="@Model.Adress" /><br />
+
+    <label>City:</label><br />
+    <input type="text" asp-for="@Model.City" /><br />
+
+    <label>Postal code:</label><br />
+    <input type="text" asp-for="@Model.PostalCode" /><br />
+
+    <br /><h3>Choose your shipping option: </h3>
+    <input type="radio" asp-for="@Model.ShippingOption" name="ShippingOption" id="opt1" value="PostNord" /><label for="opt1">PostNord (39 SEK)</label><br />
+    <input type="radio" asp-for="@Model.ShippingOption" name="ShippingOption" id="opt2" value="DHL" /><label for="opt2">DHL (99 SEK)</label><br />
+
+    <br /><h3>Choose your payment method: </h3>
+    <input type="radio" asp-for="@Model.PaymentOption" name="PaymentOption" id="opt1" value="Debit Card" /><label for="opt1">Card Payment (0 SEK)</label><br />
+    <input type="radio" asp-for="@Model.PaymentOption" name="PaymentOption" id="opt3" value="PayPal" /><label for="opt1">PayPal (0 SEK)</label><br />
+    <input type="radio" asp-for="@Model.PaymentOption" name="PaymentOption" id="opt2" value="Klarna (29 SEK)" /><label for="opt1">Klarna (29 SEK)</label><br />
+
+
+    <br /><input type="submit" value="Confirm Order" />
+</form>
