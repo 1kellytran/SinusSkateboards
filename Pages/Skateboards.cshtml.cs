@@ -15,9 +15,7 @@ namespace SinusSkateboards.Pages
         public void OnGet()
         {
             Skateboards = ProductManager.GetProducts();
-            Skateboards = from item in Skateboards
-                          where item is SkateboardModel
-                          select item;
+            Skateboards = Skateboards.Where(item => item is SkateboardModel);
         }
     }
 }

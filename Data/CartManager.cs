@@ -8,12 +8,16 @@ namespace SinusSkateboards.Data
 {
     public class CartManager 
     {
-        public int ShippingCosts { get; set; }
-        public static double TotalAmount { get; set; }
         public static List<ProductModel> ShoppingCart { get; set; } = new List<ProductModel>();
         public static List<ProductModel> Products { get; set; }
         public static ProductModel Product { get; set; }
+        public static double TotalAmount { get; set; }
 
+        /// <summary>
+        /// Adds selected products to shopping cart & makes sure product isn't duplicated
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> A list of product in shopping cart </returns>
         public static List<ProductModel> AddToCart(int id)
         {
             Products = ProductManager.GetProducts();
@@ -39,14 +43,11 @@ namespace SinusSkateboards.Data
             }
             return ShoppingCart = CartManager.ShoppingCart;
         }
-        //public static void RemoveFromCart(int id) // VAR SKA DENNA METOD ANROPAS??? TROR INTE DENNA FUNKAR FÖ
-        //{
-        //    ShoppingCart = ShoppingCart.Where(item => item.ID == id).ToList();
-        //    foreach (var item in ShoppingCart)
-        //    {
-        //        ShoppingCart.Remove(item);
-        //    }
-        //}
+        /// <summary>
+        /// Adds product price in TotalAmount 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Total price amount of the shopping cart </returns>
         public static double TotalCost(int id)
         {
             Products = ProductManager.GetProducts();
@@ -59,6 +60,10 @@ namespace SinusSkateboards.Data
             TotalAmount = CartManager.TotalAmount;
             return TotalAmount;
         }
+        /// <summary>
+        /// Subtracts specific product price from TotalAmount
+        /// </summary>
+        /// <param name="id"></param>
         public static void SubtractCost(int id)
         {
             Products = ProductManager.GetProducts();
@@ -69,19 +74,26 @@ namespace SinusSkateboards.Data
                 TotalAmount -= item.Price;
             }
         }
+        /// <summary>
+        /// Clears shopping cart of products
+        /// </summary>
         public static void ClearShoppingCart()
         {
             Products = ProductManager.GetProducts();
             Products = Products.Where(item => item.CartQuantity > 0).ToList();
             foreach (var item in Products)
             {
-                item.MaxStock -= item.CartQuantity;
+                item.MaxStock -= item.CartQuantity; // Update MaxStock to be correct after buying products
                 item.CartQuantity = 0;
             }
             TotalAmount = 0;
             ShoppingCart = new List<ProductModel>();
         }
-        public static void RemoveFromCart(int id)
+        /// <summary>
+        /// Subtract product from shopping cart
+        /// </summary>
+        /// <param name="id"></param>
+        public static void SubtractFromCart(int id)
         {
             Products = ProductManager.GetProducts();
             Products = Products.Where(item => item.ID == id).ToList();
@@ -101,7 +113,6 @@ namespace SinusSkateboards.Data
                         item.Stock += 1;
                     }
                 }
-
             }
         }
     }

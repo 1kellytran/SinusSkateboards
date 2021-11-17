@@ -9,6 +9,18 @@ namespace SinusSkateboards.Data
     {
         public static List<ProductModel> Products { get; set; } = new List<ProductModel>();
         public static ProductModel Product { get; set; } 
+
+        /// <summary>
+        /// Adds new custom product model in product list
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="price"></param>
+        /// <param name="info"></param>
+        /// <param name="image"></param>
+        /// <param name="isBestseller"></param>
+        /// <param name="stock"></param>
+        /// <param name="id"></param>
+        /// <returns> Success message </returns>
         public static string AddProducts(string name, double price, string info, string image, bool isBestseller, int stock, int id)
         {
             ProductModel Product = new ProductModel();
@@ -27,6 +39,15 @@ namespace SinusSkateboards.Data
             return message;
         }
 
+        /// <summary>
+        /// Updates existing product model with new custom made values
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="price"></param>
+        /// <param name="info"></param>
+        /// <param name="stock"></param>
+        /// <param name="id"></param>
+        /// <returns> Success message </returns>
         public static string EditProduct(string name, int price, string info, int stock, int id)
         {
             ProductModel EditedProduct = Products.Where(product => product.ID == id).FirstOrDefault();
@@ -40,6 +61,11 @@ namespace SinusSkateboards.Data
             return message;
         }
 
+        /// <summary>
+        /// Removes existing product model from list of products
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> Success message</returns>
         public static string DeleteProduct(int id)
         {
             ProductModel DeletedProduct = Products.Where(product => product.ID == id).FirstOrDefault();
@@ -49,6 +75,10 @@ namespace SinusSkateboards.Data
             return message;
         }
 
+        /// <summary>
+        /// Create all products to be gotten for shop inventory
+        /// </summary>
+        /// <returns> List of products </returns>
         public static List<ProductModel> GetProducts()
         {
             if (!Products.Any())

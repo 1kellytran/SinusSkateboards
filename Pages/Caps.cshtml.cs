@@ -15,9 +15,7 @@ namespace SinusSkateboards.Pages
         public void OnGet()
         {
             Caps = ProductManager.GetProducts();
-            Caps = from item in Caps
-                   where item.Category is Category.Cap
-                   select item;
+            Caps = Caps.Where(item => item.Category == Category.Cap);
         }
     }
 }

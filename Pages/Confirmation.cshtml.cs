@@ -24,7 +24,7 @@ namespace SinusSkateboards.Pages
         public double TotalAmount { get; set; }
         
         // Parameters sent from Shipping-page 
-        public void OnGet(string name, string email, string number, string adress, string postalCode, string city, string shippingOption, string paymentOption, int id)
+        public void OnGet(string name, string email, string number, string adress, string postalCode, string city, string shippingOption, string paymentOption)
         {
             Name = name;
             Email = email;
@@ -34,9 +34,8 @@ namespace SinusSkateboards.Pages
             City = city;
             ShippingOption = shippingOption;
             PaymentOption = paymentOption;
-            TotalAmount = CartManager.TotalAmount;
 
-            CartManager.AddToCart(id);
+            TotalAmount = CartManager.TotalAmount;
             ShoppingCart = CartManager.ShoppingCart;
         }
     }

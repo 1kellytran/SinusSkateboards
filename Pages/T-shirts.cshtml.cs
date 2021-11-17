@@ -15,10 +15,7 @@ namespace SinusSkateboards.Pages
         public void OnGet()
         {
             Tshirts = ProductManager.GetProducts();
-            //Tshirts = Tshirts.Where(item => item.Category == Category.Tshirt).ToList();
-            Tshirts = from item in Tshirts
-                      where item.Category is Category.Tshirt
-                      select item;
+            Tshirts = Tshirts.Where(item => item.Category == Category.Tshirt);
         }
     }
 }

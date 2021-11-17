@@ -27,7 +27,7 @@ namespace SinusSkateboards.Pages
             }
             else if(action == "Remove")
             {
-                CartManager.RemoveFromCart(id);
+                CartManager.SubtractFromCart(id);
                 CartManager.SubtractCost(id);
             }
             ShoppingCart = CartManager.ShoppingCart;

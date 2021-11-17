@@ -17,9 +17,7 @@ namespace SinusSkateboards.Pages
         public void OnGet()
         {
             Wheels = ProductManager.GetProducts();
-            Wheels = from item in Wheels
-                     where item is WheelModel
-                     select item;
+            Wheels = Wheels.Where(item => item is WheelModel);
         }
     }
 }

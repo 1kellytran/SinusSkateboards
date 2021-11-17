@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SinusSkateboards.Models
 {
+    // Applies to Wearable only
     public enum Category
     {
         Cap = 1,
@@ -28,6 +29,7 @@ namespace SinusSkateboards.Models
         Yellow
     }
 
+    // Applies to Wearable only
     public enum Size
     {
         [Display(Name = "ONE SIZE")]
@@ -37,11 +39,14 @@ namespace SinusSkateboards.Models
         L
     }
 
-    public enum Material
+    // Applies to Skatebords only
+    public enum Material 
     {
         Plastic,
         Wood
     }
+
+    // Applies to Wheels only
     public enum WheelSize
     {
         Fat,

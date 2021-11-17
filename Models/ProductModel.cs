@@ -14,10 +14,10 @@ namespace SinusSkateboards.Models
         public string Info { get; set; }
         public Category Category { get; set; }
         public Color Color { get; set; }
-        public bool IsBestseller { get; set; }
-        public int Stock { get; set; }
-        public int MaxStock { get; set; }
-        public int CartQuantity { get; set; }
-        public string SearchTerm { get { return string.Concat(Name.ToLower(), Info.ToLower()); } }
+        public bool IsBestseller { get; set; } // For selected products on home page
+        public int Stock { get; set; } // Currently in stock
+        public int MaxStock { get; set; } // To not be able to sell more than this many
+        public int CartQuantity { get; set; } // Quantity of a product in shopping cart
+        public string SearchTerm { get { return string.Concat(Name.ToLower(), Info.ToLower()); } } // Searchbar
     }
 }
