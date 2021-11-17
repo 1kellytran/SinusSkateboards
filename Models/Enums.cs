@@ -12,7 +12,6 @@ namespace SinusSkateboards.Models
         Cap = 1,
         Hoodie,
         Tshirt,
-
     }
 
     public enum Color

@@ -26,8 +26,8 @@
                                     <p class="card-text"><b>Size</b>: @(((Models.WearableModel)product).Size)</p>
                                 }
                                 <p class="card-text">@product.Price SEK </p>
-                                <button type="submit" asp-route-id="@product.ID" asp-route-action="Add">+</button>
-                                <button type="submit" asp-route-id="@product.ID" asp-route-action="Remove">-</button>
+                                <button class="btn btn-outline-success" type="submit" asp-route-id="@product.ID" asp-route-action="Add">+</button>
+                                <button class="btn btn-outline-danger" type="submit" asp-route-id="@product.ID" asp-route-action="Remove">--</button>
                             </div>
                         </div>
                         <br />
