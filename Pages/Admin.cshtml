@@ -14,8 +14,8 @@
             <th>Price</th>
             <th>ImageURL</th>
             <th>In Stock</th>
+            <th><a asp-page="CreateProduct" class="btn btn-info">Create new product</a></th>
         </tr>
-        <a asp-page="CreateProduct" class="btn btn-outline-dark">Create</a>
     </thead>
     @foreach (var product in Model.Products)
     {

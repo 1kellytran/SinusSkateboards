@@ -13,6 +13,7 @@ namespace SinusSkateboards.Pages
     {
         [BindProperty]
         public List<ProductModel> Product { get; set; }
+        public double VAT = 0.24;
         public void OnGet(int id)
         {
             Product = ProductManager.GetProducts();

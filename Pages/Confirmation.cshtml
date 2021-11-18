@@ -37,6 +37,7 @@
         </p>
 
         <p>Your total including shipping: <b>@Model.TotalAmount SEK</b><br />
+        <p>VAT <i>@(Model.TotalAmount * @Model.VAT) SEK</i> included</p>
         Your order will be delivered by: <b>@Model.ShippingOption</b><br />
         An order confirmation will be sent to <b>@Model.Number</b> and <b>@Model.Email</b>
         </p>

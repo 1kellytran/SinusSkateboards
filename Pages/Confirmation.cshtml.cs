@@ -22,7 +22,8 @@ namespace SinusSkateboards.Pages
         public string ShippingOption { get; set; }
         public string PaymentOption { get; set; }
         public double TotalAmount { get; set; }
-        
+        public double VAT = 0.25;
+
         // Parameters sent from Shipping-page 
         public void OnGet(string name, string email, string number, string adress, string postalCode, string city, string shippingOption, string paymentOption)
         {

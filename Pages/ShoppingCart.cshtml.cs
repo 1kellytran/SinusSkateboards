@@ -14,6 +14,7 @@ namespace SinusSkateboards.Pages
         public List<ProductModel> ShoppingCart { get; set; }
         public double TotalAmount { get; set; }
         // Parameters sent from VewProduct-page
+        public double VAT = 0;
         public void OnGet(int id)
         {
             ShoppingCart = CartManager.AddToCart(id);
